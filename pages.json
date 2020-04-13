@@ -1,0 +1,25 @@
+{
+	"pages": [
+		{
+			"path": "src/pages/login/login",
+			"style": {
+				"navigationBarTitleText": "用户注册"
+			}
+		}, {
+			"path": "src/pages/login/loginForm",
+			"style": {
+				"navigationBarTitleText": "用户注册"
+			}
+		}, {
+			"path": "src/pages/index/index",
+			"style": {
+				"navigationBarTitleText": "WADEJERRY"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarBackgroundColor": "#0faeff",
+		"backgroundColor": "white"
+	}
+}
