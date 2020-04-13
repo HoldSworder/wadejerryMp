@@ -27,7 +27,6 @@
 		},
 		methods: {
 			async getPhoneNumber(e) {
-				console.log(this.$store.getters['basic/getOpenid'])
 				this.$store.dispatch('user/getPhoneNumber')
 				// try {
 				// 	const { iv, encryptedData} = e.detail
