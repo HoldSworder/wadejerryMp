@@ -13,8 +13,8 @@
 </script>
 
 <style lang='stylus'>
-	@import 'colorui/main.css'
-	@import "colorui/icon.css"
+	@import 'plugins/colorui/main.css'
+	@import "plugins/colorui/icon.css"
 	@import 'style/index.styl'
 	
 	page {

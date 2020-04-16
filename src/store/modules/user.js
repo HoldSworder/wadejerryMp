@@ -18,18 +18,15 @@ export default {
   },
 
   actions: {
-    getPhoneNumber({ commit, rootGetters }) {
+    getPhoneNumber({ commit, rootGetters }, detail) {
       return new Promise(async (resolve, reject) => {
-        const openid = rootGetters['basic/getOpenid']
-        const sessionKey = rootGetters['basic/getSessionKey']
+        const sessionId = rootGetters['basic/getSessionId']
 
-        const phoneNumber = await api.basic.getPhoneNumber({
-          openid,
-          sessionKey
-        })
+        detail.sessionId = sessionId
+        const phoneNumberInfo = await api.basic.getPhoneNumber(detail)
 
-        commit(types.SET_PHONE_NUMBER, phoneNumber)
-        resolve(phoneNumber)
+        commit(types.SET_PHONE_NUMBER, phoneNumberInfo.phoneNumber)
+        resolve(phoneNumberInfo)
       })
     }
   }

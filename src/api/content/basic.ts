@@ -15,9 +15,9 @@ interface code {
 
 export default {
 	login(code: code) {
-		return fly.post(login, code)
+		return fly.get(login, code)
 	},
 	getPhoneNumber(obj: getPhoneObj) {
-		return fly.post(getPhoneNumber, obj)
+		return fly.get(getPhoneNumber, obj)
 	}
 }

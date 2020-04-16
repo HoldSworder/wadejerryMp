@@ -13,6 +13,10 @@ fly.config.headers = {
 fly.interceptors.response.use(
     (response) => {
         //只将请求结果的data字段返回
+        if(!response.data.success) {
+            Promise.reject(response.data.msg)
+            throw Error(response.data.msg)
+        }
         return response.data
     },
     (err) => {

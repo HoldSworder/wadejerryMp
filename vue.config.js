@@ -24,7 +24,8 @@ module.exports = {
         "assets": resolve("src/assets"),
         "common": resolve("src/common"),
         "pages": resolve("src/pages"),
-        "store": resolve("src/store")
+        "store": resolve("src/store"),
+        "plugins": resolve("src/plugins")
       },
     },
   },

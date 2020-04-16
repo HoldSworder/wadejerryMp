@@ -13,7 +13,7 @@
 			
 			<view class="cu-form-group">
 				<view class="title">手机号码</view>
-				<input placeholder="请输入手机号" name="input" />
+				<input placeholder="请输入手机号" v-model="phoneNumber" name="input" />
 				<view class="cu-capsule radius">
 					<view class='cu-tag bg-blue '>
 						+86
@@ -75,6 +75,8 @@
 				sex_index: 0,
 				
 				agree: false,
+
+				phoneNumber: ''
 			}
 		},
 		
@@ -89,7 +91,6 @@
 			
 			agreeChange(e) {
 				this.agree = !this.agree
-				console.log(this.agree)
 			},
 
 			submit_form() {
@@ -105,6 +106,11 @@
 					url: '/src/pages/index/index'
 				})
 			}
+		},
+
+		mounted () {
+			const phoneNumber = this.$store.getters['user/getPhoneNumber']
+			this.phoneNumber = phoneNumber
 		}
 	}
 </script>

@@ -9,8 +9,8 @@
 		
 		<div id="info_box">
 			<p>请确认一下获取信息</p>
-			<!-- <button id="btn_phone" open-type='getPhoneNumber' @getphonenumber="getPhoneNumber" class="cu-btn round bg-blue">手机号码获取</button> -->
-			<button id="btn_phone" @click="getPhoneNumber" class="cu-btn round">手机号码获取</button>
+			<button id="btn_phone" open-type='getPhoneNumber' @getphonenumber="getPhoneNumber" class="cu-btn round bg-blue">手机号码获取</button>
+			<!-- <button id="btn_phone" @click="getPhoneNumber" class="cu-btn round">手机号码获取</button> -->
 		</div>
 		
 	</div>
@@ -27,40 +27,13 @@
 		},
 		methods: {
 			async getPhoneNumber(e) {
-				this.$store.dispatch('user/getPhoneNumber')
-				// try {
-				// 	const { iv, encryptedData} = e.detail
-				// 	const provider = await uniTool.getProvider()
-				// 	const code = await uniTool.login(provider)
-	
-				// 	const userData = await this.$api.basic.login({
-				// 		code
-				// 	})
-	
-				// 	const phoneNumber = await this.$api.basic.getPhoneNumber({
-				// 		iv,
-				// 		encryptedData,
-				// 		userData
-				// 	})
-					
-				// } catch (error) {
-				// 	uni.showToast({
-				// 		title: error,
-				// 		duration: 2000
-				// 	})
-				// 	throw Error(error)
-				// }
+				if(e.detail.errMsg !== "getPhoneNumber:ok") return
+				const phoneNumber = await this.$store.dispatch('user/getPhoneNumber', e.detail)
 
-				// uni.redirectTo({
-				// 	url: '/src/pages/loginForm/index'
-				// })
+				uni.redirectTo({
+					url: `/src/pages/login/loginForm`
+				})
 			},
-
-			// async goNext() {
-			// 	uni.redirectTo({
-			// 		url: '/src/pages/login/loginForm'
-			// 	})
-			// }
 		}
 	}
 </script>

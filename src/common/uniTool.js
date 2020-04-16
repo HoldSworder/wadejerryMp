@@ -11,6 +11,7 @@ class uniTool {
 				},
 				fail(err) {
 					reject(err)
+					throw err
 				}
 			})
 		})
@@ -29,6 +30,7 @@ class uniTool {
 				},
 				fail(err) {
 					reject(err)
+					throw err
 				}
 			})
 		})
@@ -53,6 +55,29 @@ class uniTool {
 				resolve(data)
 			}).exec()
 		})
+	}
+
+	static setStorages(storageObj) {
+		let storagePromiseArr = []
+		for (const key in storageObj) {
+			if (storageObj.hasOwnProperty(key)) {
+				const element = storageObj[key];
+				storagePromiseArr.push(new Promise((resolve, reject) => {
+					uni.setStorage({
+						key,
+						data: element,
+						success() {
+							resolve()
+						},
+						fail(err) {
+							reject(err)
+						}
+					})
+				}))
+			}
+		}
+
+		return Promise.allSettled(storagePromiseArr)
 	}
 }
 

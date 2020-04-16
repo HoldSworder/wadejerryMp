@@ -23,6 +23,8 @@
 
 		<shortcut-lump></shortcut-lump>
 
+		<charts></charts>
+
 		<tab-bar></tab-bar>
 	</div>
 </template>
@@ -30,10 +32,12 @@
 <script>
 import scrollText from 'components/index/scroll_text'
 import shortcutLump from 'components/index/shortcut_lump'
+import charts from 'components/charts/index'
 export default {
 	components: {
 		scrollText,
-		shortcutLump
+		shortcutLump,
+		charts
 	},
 	data() {
 		return {
