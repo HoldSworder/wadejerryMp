@@ -8,25 +8,17 @@
 			
 			<view class="cu-form-group">
 				<view class="title">用户名</view>
-				<input placeholder="请输入用户名" name="input" />
+				<input placeholder="请输入用户名" v-model="userName" name="input" />
 			</view>
 			
 			<view class="cu-form-group">
 				<view class="title">手机号码</view>
 				<input placeholder="请输入手机号" v-model="phoneNumber" name="input" />
-				<view class="cu-capsule radius">
-					<view class='cu-tag bg-blue '>
-						+86
-					</view>
-					<view class="cu-tag line-blue">
-						中国大陆
-					</view>
-				</view>
 			</view>
 			
 			<view class="cu-form-group">
 				<view class="title">验证码</view>
-				<input placeholder="请输入验证码" name="input" />
+				<input placeholder="请输入验证码" v-model="authCode" name="input" />
 				<button class='cu-btn bg-green shadow'>获取验证码</button>
 			</view>
 			
@@ -76,7 +68,11 @@
 				
 				agree: false,
 
-				phoneNumber: ''
+				form: [{}],
+
+				phoneNumber: '',
+				userName: '',
+				authCode: ''
 			}
 		},
 		
@@ -94,6 +90,9 @@
 			},
 
 			submit_form() {
+				console.log(this.$refs)
+
+				return
 				uni.showToast({
 					icon: 'none',
           title: '该手机号未注册',
@@ -161,4 +160,6 @@ checkbox .uni-checkbox-input {
 	align-items center
 	justify-content center
 
+.cu-form-group input 
+	text-align right
 </style>

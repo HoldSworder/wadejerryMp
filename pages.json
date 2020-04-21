@@ -15,7 +15,49 @@
 			"style": {
 				"navigationBarTitleText": "WADEJERRY"
 			}
+		}, {
+			"path": "src/pages/submenu/entrance/index",
+			"style": {
+				"navigationBarTitleText": "entrance"
+			}
+		}, {
+			"path": "src/pages/submenu/car/index",
+			"style": {
+				"navigationBarTitleText": "car"
+			}
+		}, {
+			"path": "src/pages/submenu/info/index",
+			"style": {
+				"navigationBarTitleText": "info"
+			}
+		}, {
+			"path": "src/pages/submenu/pay/index",
+			"style": {
+				"navigationBarTitleText": "pay"
+			}
+		}, {
+			"path": "src/pages/submenu/school/index",
+			"style": {
+				"navigationBarTitleText": "school"
+			}
+		}, {
+			"path": "src/pages/submenu/sendcar/index",
+			"style": {
+				"navigationBarTitleText": "sendcar"
+			}
+		}, {
+			"path": "src/pages/submenu/time/index",
+			"style": {
+				"navigationBarTitleText": "time"
+			}
+		}, {
+			"path": "src/pages/submenu/visitor/index",
+			"style": {
+				"navigationBarTitleText": "visitor"
+			}
 		}
+
+
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",

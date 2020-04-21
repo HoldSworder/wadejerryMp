@@ -1,18 +1,8 @@
 <template>
 	<div class="container">
-		<swiper class="screen-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
-			<swiper-item v-for="(item, index) of swiperList" :key="index">
-				<image :src="item.url" mode="aspectFill" v-if="item.type=='image'"></image>
-				<video :src="item.url" autoplay loop muted show-play-btn=false controls=false objectFit="cover" v-if="item.type=='video'"></video>
-			</swiper-item>
-		</swiper>
+		<swiper :swiperList="swiperList" style="height: 100%"></swiper>
 
-		<div id="entrance_container">
-			<div v-for="(item, index) of entrance" :key="index" class="entrance-box">
-				<image :src="item.url" class="entrance-img">
-				<div>{{item.name}}</div>
-			</div>
-		</div>
+		<entrance :data="entrance"></entrance>
 
 		<div id="news_container">
 			<div class="new-text"><span class="time-text">时间</span>简报</div>
@@ -23,7 +13,7 @@
 
 		<shortcut-lump></shortcut-lump>
 
-		<charts></charts>
+		<column-chart></column-chart>
 
 		<tab-bar></tab-bar>
 	</div>
@@ -32,12 +22,16 @@
 <script>
 import scrollText from 'components/index/scroll_text'
 import shortcutLump from 'components/index/shortcut_lump'
-import charts from 'components/charts/index'
+import columnChart from 'components/charts/column'
+import swiper from 'components/basic/swiper'
+import entrance from 'components/basic/entrance'
 export default {
 	components: {
 		scrollText,
 		shortcutLump,
-		charts
+		columnChart,
+		swiper,
+		entrance
 	},
 	data() {
 		return {
@@ -59,28 +53,36 @@ export default {
 			}],
 			entrance: [{
 				name: '出入口',
-				url: require('static/icon/index/key.svg')
+				icon: require('static/icon/index/key.svg'),
+				url: '/src/pages/submenu/entrance/index'
 			}, {
 				name: '时间管理',
-				url: require('static/icon/index/time.svg')
+				icon: require('static/icon/index/time.svg'),
+				url: '/src/pages/submenu/time/index'
 			}, {
 				name: '消费管理',
-				url: require('static/icon/index/card.svg')
+				icon: require('static/icon/index/card.svg'),
+				url: '/src/pages/submenu/pay/index'
 			}, {
 				name: '云访客',
-				url: require('static/icon/index/visitor.svg')
+				icon: require('static/icon/index/visitor.svg'),
+				url: '/src/pages/submenu/visitor/index'
 			}, {
 				name: '车辆管理',
-				url: require('static/icon/index/car.svg')
+				icon: require('static/icon/index/car.svg'),
+				url: '/src/pages/submenu/car/index'
 			}, {
 				name: '信息发布',
-				url: require('static/icon/index/program.svg')
+				icon: require('static/icon/index/program.svg'),
+				url: '/src/pages/submenu/info/index'
 			}, {
 				name: '派车管理',
-				url: require('static/icon/index/sendCar.svg')
+				icon: require('static/icon/index/sendCar.svg'),
+				url: '/src/pages/submenu/sendcar/index'
 			}, {
 				name: '智慧校园',
-				url: require('static/icon/index/school.svg')
+				icon: require('static/icon/index/school.svg'),
+				url: '/src/pages/submenu/school/index'
 			}]
 		}
 	}
@@ -88,32 +90,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.entrance-img
-	width 48px
-	height 48px
-	margin 5px 0
-
-#entrance_container
-	display flex
-	align-items center
-	justify-content space-around
-	flex-wrap wrap
-
-.entrance-box
-	width 25%
-	height 48px
-	font-family '宋体 常规', '宋体', sans-serif
-	font-weight 400
-	font-style: normal;
-	font-size: 12px;
-	min-width 25%
-	max-width 25%
-	min-height 80px
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-
 .time-text
 	color #169BD5
 

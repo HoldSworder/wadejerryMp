@@ -24,16 +24,12 @@ export default {
       pixelRatio: 1,
       serverData: '',
       chartData: {
-        categories: ['2012', '2013', '2014', '2015', '2016', '2017'],
+        categories: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
         series: [
           {
-            name: '成交量1',
-            data: [15, { value: 20, color: '#f04864' }, 45, 37, 43, 34],
-          },
-          {
-            name: '成交量2',
-            data: [30, { value: 40, color: '#facc14' }, 25, 14, 34, 18],
-          },
+            name: '消费金额',
+            data: [150, 200, 450, 370, 430, 340, 170],
+          }
         ],
       },
     }
