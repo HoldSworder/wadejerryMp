@@ -2,12 +2,13 @@
 	<div class="container">
 		<swiper :swiperList="swiperList" style="height: 100%"></swiper>
 
-		<entrance :data="entrance"></entrance>
+		<entrance :dataList="entrance"></entrance>
 
 		<div id="news_container">
 			<div class="new-text"><span class="time-text">时间</span>简报</div>
 			<div style="float:left;width: 1px;height: 25px; background: #f2f2f2;"></div> 
-			<scroll-text class="scroll-text" :text="text" :speed="1" :interval="100"></scroll-text>
+			<!-- <scroll-text class="scroll-text" :text="text" :speed="1" :interval="100"></scroll-text> -->
+			<span class="scroll-text">这是一条测试text,WADEJERRY...</span>
 			<span class="news-next">></span>
 		</div>
 

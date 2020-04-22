@@ -90,14 +90,20 @@
 			},
 
 			submit_form() {
-				console.log(this.$refs)
+				if(this.userName == '' || this.phoneNumber == '') {
+					uni.showToast({
+						title: '请输入必填项',
+						duration: 2000,
+						icon: 'none'
+					})
+				}else {
+					uni.showToast({
+						icon: 'none',
+						title: '该手机号未注册',
+						duration: 2000
+					})
+				}
 
-				return
-				uni.showToast({
-					icon: 'none',
-          title: '该手机号未注册',
-          duration: 2000
-        })
 			},
 			
 			goIndex() {

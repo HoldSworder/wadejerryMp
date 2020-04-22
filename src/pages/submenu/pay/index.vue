@@ -2,9 +2,11 @@
   <div>
     <swiper :swiperList="swiperList" style="height: 100%"></swiper>
 
-    <entrance :data="entrance"></entrance>
+    <entrance :dataList="entrance"></entrance>
 
     <column-chart></column-chart>
+
+		<tab-bar></tab-bar>
   </div>
 </template>
 

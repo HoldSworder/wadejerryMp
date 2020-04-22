@@ -1,6 +1,6 @@
 <template>
   <div id="entrance_container" class="entrance-container">
-    <div v-for="(item, index) of data" :key="index" @click="goSubMenu(item.url)" class="entrance-box">
+    <div v-for="(item, index) of dataList" :key="index" @click="goSubMenu(item.url)" class="entrance-box">
       <image :src="item.icon" class="entrance-img">
       <div>{{item.name}}</div>
     </div>
@@ -9,7 +9,7 @@
 
 <script>
 export default {
-	props: ['data'],
+	props: ['dataList'],
 	methods: {
 		goSubMenu(url) {
 			uni.redirectTo({

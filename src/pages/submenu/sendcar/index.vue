@@ -2,9 +2,11 @@
   <div>
     <swiper :swiperList="swiperList" style="height: 100%"></swiper>
 
-    <entrance :data="entrance"></entrance>
+    <entrance :dataList="entrance"></entrance>
 
     <column-chart></column-chart>
+
+		<tab-bar></tab-bar>
   </div>
 </template>
 
@@ -35,11 +37,11 @@ export default {
       }],
       entrance: [{
 				name: '宿舍管理',
-				icon: require('static/icon/submenu/cendcar/sendcar.svg'),
+				icon: require('static/icon/submenu/sendcar/sendcar.svg'),
 				url: 'entrance'
 			}, {
 				name: '电子班牌',
-				icon: require('static/icon/submenu/cendcar/inout.svg'),
+				icon: require('static/icon/submenu/sendcar/inout.svg'),
 				url: ''
 			}]
     }

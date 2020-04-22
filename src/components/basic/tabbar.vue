@@ -7,22 +7,22 @@
 
 			<cover-view class="cu-bar tabbar">
 
-				<cover-view class="action text-color bar-box" @click="goNext('src/pages/index/index')">
+				<cover-view class="action text-color bar-box" @click="goNext('/src/pages/index/index')">
 						<cover-image src="../../../static/icon/tabBar/home.png" class="bar-img"></cover-image> 
 						<cover-view>首页</cover-view>
 				</cover-view>
 
-				<cover-view class="action text-color bar-box" @click="goNext('src/pages/index/index')">
+				<cover-view class="action text-color bar-box" @click="goNext('/src/pages/index/index')">
 						<cover-image src="../../../static/icon/tabBar/advisory.png" class="bar-img"></cover-image> 
 						<cover-view>咨询</cover-view>
 				</cover-view>
 
-				<cover-view class="action text-color bar-box" @click="goNext('src/pages/index/index')">
+				<cover-view class="action text-color bar-box" @click="goNext('/src/pages/index/index')">
 						<cover-image src="../../../static/icon/tabBar/solution.png" class="bar-img"></cover-image> 
 						<cover-view>解决方案</cover-view>
 				</cover-view>
 
-				<cover-view class="action text-color bar-box" @click="goNext('src/pages/index/index')">
+				<cover-view class="action text-color bar-box" @click="goNext('/src/pages/index/index')">
 						<cover-image src="../../../static/icon/tabBar/user.png" class="bar-img"></cover-image> 
 						<cover-view>我的</cover-view>
 				</cover-view>
@@ -44,7 +44,7 @@
 
 		methods: {
 			goNext(url) {
-				uni.navigateTo({
+				uni.redirectTo({
 						url
 				})
 			}
